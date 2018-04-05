@@ -1,0 +1,92 @@
+Xhxf3w8pkZQ1jfiqGKz5QeL5TF8AqzkeGsDDmL215oFtEQ8sKyUj1EiC6b2me9HjXTTi1tatPvTbtc
+Joined My Wallet!
+
+
+** Wallet Info { preferences: {},
+  wallet:
+   { version: '1.0.0',
+     createdOn: 1522815832,
+     id: 'f8aa35b9-1a80-40b2-9dea-f025900a58d3',
+     name: 'My Wallet',
+     m: 2,
+     n: 2,
+     singleAddress: false,
+     status: 'complete',
+     publicKeyRing: [ [Object], [Object] ],
+     copayers: [ [Object], [Object] ],
+     pubKey: '03b6e76cc79b1c7060bfbe242ef2438c5f201fa84383054f8e913fba1f0f300785',
+     coin: 'btc',
+     network: 'testnet',
+     derivationStrategy: 'BIP44',
+     addressType: 'P2SH',
+     addressManager:
+      { version: 2,
+        derivationStrategy: 'BIP44',
+        receiveAddressIndex: 0,
+        changeAddressIndex: 0,
+        copayerIndex: 2147483647 },
+     scanStatus: null,
+     encryptedName: '{"iv":"N+iS70ux+YbxoYnReUBmNw==","v":1,"iter":1,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","ct":"HH30l+fXXFQiI5ZTx7XGqCA="}' },
+  pendingTxps: [],
+  balance:
+   { totalAmount: 0,
+     lockedAmount: 0,
+     totalConfirmedAmount: 0,
+     lockedConfirmedAmount: 0,
+     availableAmount: 0,
+     availableConfirmedAmount: 0,
+     byAddress: [] },
+  customData:
+   { walletPrivKey: 'f5a94a4c2e11b5c092423fffced5026176596d982ef48b4408043382418f217e' } }
+
+
+Creating first address: { preferences: {},
+  wallet:
+   { version: '1.0.0',
+     createdOn: 1522815832,
+     id: 'f8aa35b9-1a80-40b2-9dea-f025900a58d3',
+     name: 'My Wallet',
+     m: 2,
+     n: 2,
+     singleAddress: false,
+     status: 'complete',
+     publicKeyRing: [ [Object], [Object] ],
+     copayers: [ [Object], [Object] ],
+     pubKey: '03b6e76cc79b1c7060bfbe242ef2438c5f201fa84383054f8e913fba1f0f300785',
+     coin: 'btc',
+     network: 'testnet',
+     derivationStrategy: 'BIP44',
+     addressType: 'P2SH',
+     addressManager:
+      { version: 2,
+        derivationStrategy: 'BIP44',
+        receiveAddressIndex: 0,
+        changeAddressIndex: 0,
+        copayerIndex: 2147483647 },
+     scanStatus: null,
+     encryptedName: '{"iv":"N+iS70ux+YbxoYnReUBmNw==","v":1,"iter":1,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","ct":"HH30l+fXXFQiI5ZTx7XGqCA="}' },
+  pendingTxps: [],
+  balance:
+   { totalAmount: 0,
+     lockedAmount: 0,
+     totalConfirmedAmount: 0,
+     lockedConfirmedAmount: 0,
+     availableAmount: 0,
+     availableConfirmedAmount: 0,
+     byAddress: [] },
+  customData:
+   { walletPrivKey: 'f5a94a4c2e11b5c092423fffced5026176596d982ef48b4408043382418f217e' } }
+
+Return: { version: '1.0.0',
+  createdOn: 1522815870,
+  address: '2Myy1zhVvhR2kp5D7XjUukZpYYDhvnUDRRe',
+  walletId: 'f8aa35b9-1a80-40b2-9dea-f025900a58d3',
+  isChange: false,
+  path: 'm/0/0',
+  publicKeys:
+   [ '0295e99705e195604f22f0d4eba889f1bcb32e4533bd4604b52995ec2e592ad10a',
+     '03d3fbb19a9a88faf20b702dbe3e6c56caf6ee812a75d7bb4c666c370b58120a99' ],
+  coin: 'btc',
+  network: 'testnet',
+  type: 'P2SH',
+  _id: '5ac4537ef4bb3f35ef20ff83' }
