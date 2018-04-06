@@ -30,22 +30,15 @@ client.openWallet(function(err, ret) {
             return
         };
         console.log('here: 2');
-        var signTxp = txps[0];
-        console.log(signTxp);
+        var tx = txps[0];
+        // console.log(tx);
 
-        if (signTxp.status != 'accepted') {
-            console.log('status is not accepted: ', signTxp.status);
-            return;
-        };
-        http.onCall(5).yields(null, signTxp);
-        client.broadcastTxProposal(signTxp, function(err, zz, memo) {
+        client.removeTxProposal(tx, function(err) {
             if (err) {
                 console.log('error: ', err);
-                return;
+                return
             };
-            console.log(zz);
-            console.log(memo);
-
+            console.log('here: 3');
         });
     });
 
