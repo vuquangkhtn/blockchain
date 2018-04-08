@@ -7,13 +7,21 @@ var BWS_INSTANCE_URL = 'https://bws.bitpay.com/bws/api';
 
 var WALLET_FILE = './tomas.dat';
 
+var WALLET_FILE_2 = './irene.dat';
+
 var client = new Client({
+    baseUrl: BWS_INSTANCE_URL,
+    verbose: false,
+});
+
+var client2 = new Client({
     baseUrl: BWS_INSTANCE_URL,
     verbose: false,
 });
 
 // open wallet
 client.import(fs.readFileSync(WALLET_FILE));
+client2.import(fs.readFileSync(WALLET_FILE_2));
 
 var http = sinon.stub();
 client.openWallet(function(err, ret) {
@@ -54,7 +62,20 @@ client.openWallet(function(err, ret) {
                 };
                 // console.log(signTxp);
                 console.log('here: 3');
-                console.log(signTxp);
+                client2.openWallet(function(err, ret) {
+                    if (err) {
+                        console.log('error: ', err);
+                        return;
+                    };
+                    console.log('here: 4');
+                    client2.signTxProposal(publishTxp, function(err, sign2Txp) {
+                        if (err) {
+                            console.log('error: ', err);
+                            return;
+                        };
+                        console.log(sign2Txp);
+                    });
+                })
             });
         });
     });
