@@ -5,6 +5,7 @@ var fs = require('fs');
 var BWS_INSTANCE_URL = 'https://bws.bitpay.com/bws/api';
 
 var WALLET_FILE = './tomas.dat';
+var WALLET_FILE_2 = './irene.dat';
 
 var client = new Client({
     baseUrl: BWS_INSTANCE_URL,
@@ -12,7 +13,7 @@ var client = new Client({
 });
 
 // open wallet
-client.import(fs.readFileSync(WALLET_FILE));
+client.import(fs.readFileSync(WALLET_FILE_2));
 
 var http = sinon.stub();
 // http.yields(null, TestData.payProBuf);
@@ -33,20 +34,20 @@ client.openWallet(function(err, ret) {
         var signTxp = txps[0];
         console.log(signTxp);
 
-        // if (signTxp.status != 'accepted') {
-        //     console.log('status is not accepted: ', signTxp.status);
-        //     return;
-        // };
-        // http.onCall(5).yields(null, signTxp);
-        // client.broadcastTxProposal(signTxp, function(err, zz, memo) {
-        //     if (err) {
-        //         console.log('error: ', err);
-        //         return;
-        //     };
-        //     console.log(zz);
-        //     console.log(memo);
+        if (signTxp.status != 'accepted') {
+            console.log('status is not accepted: ', signTxp.status);
+            return;
+        };
+        http.onCall(5).yields(null, signTxp);
+        client.broadcastTxProposal(signTxp, function(err, zz, memo) {
+            if (err) {
+                console.log('error: ', err);
+                return;
+            };
+            console.log(zz);
+            console.log(memo);
 
-        // });
+        });
     });
 
 });

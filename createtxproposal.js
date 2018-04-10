@@ -20,8 +20,8 @@ var client2 = new Client({
 });
 
 // open wallet
-client.import(fs.readFileSync(WALLET_FILE));
-client2.import(fs.readFileSync(WALLET_FILE_2));
+client.import(fs.readFileSync(WALLET_FILE_2));
+client2.import(fs.readFileSync(WALLET_FILE));
 
 var http = sinon.stub();
 client.openWallet(function(err, ret) {
@@ -60,8 +60,8 @@ client.openWallet(function(err, ret) {
                     console.log('error: ', err);
                     return;
                 };
-                // console.log(signTxp);
                 console.log('here: 3');
+                console.log(signTxp);
                 client2.openWallet(function(err, ret) {
                     if (err) {
                         console.log('error: ', err);
