@@ -9,7 +9,7 @@ var client = new Client({
   verbose: false,
 });
 
-client.createWallet("My Wallet", "Irene", 2, 2, {network: 'testnet'}, function(err, secret) {
+client.createWallet("My Wallet", "Irene", 1, 1, {network: 'testnet'}, function(err, secret) {
   if (err) {
     console.log('error: ',err);
     return

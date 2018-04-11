@@ -5,7 +5,7 @@ var fs = require('fs');
 // var BWS_INSTANCE_URL = 'http://43.239.149.130:3232/bws/api';
 var BWS_INSTANCE_URL = 'https://bws.bitpay.com/bws/api';
 
-var WALLET_FILE = './tomas.dat';
+// var WALLET_FILE = './tomas.dat';
 
 var WALLET_FILE_2 = './irene.dat';
 
@@ -14,14 +14,14 @@ var client = new Client({
     verbose: false,
 });
 
-var client2 = new Client({
-    baseUrl: BWS_INSTANCE_URL,
-    verbose: false,
-});
+// var client2 = new Client({
+//     baseUrl: BWS_INSTANCE_URL,
+//     verbose: false,
+// });
 
 // open wallet
 client.import(fs.readFileSync(WALLET_FILE_2));
-client2.import(fs.readFileSync(WALLET_FILE));
+// client2.import(fs.readFileSync(WALLET_FILE));
 
 var http = sinon.stub();
 client.openWallet(function(err, ret) {
@@ -33,9 +33,10 @@ client.openWallet(function(err, ret) {
     var opts = {
         outputs: [{
             toAddress: 'n3XjJ2jQh5TnuUwFamotccjXJAya3ZucCv',
-            amount: 10000000
+            amount: 44523520
         }],
-        changeAddress: '2Myy1zhVvhR2kp5D7XjUukZpYYDhvnUDRRe'
+        changeAddress: '2Myy1zhVvhR2kp5D7XjUukZpYYDhvnUDRRe',
+        feePerKb: 123e2
         // feePerKb: 100e2
 
     }
@@ -62,20 +63,20 @@ client.openWallet(function(err, ret) {
                 };
                 console.log('here: 3');
                 console.log(signTxp);
-                client2.openWallet(function(err, ret) {
-                    if (err) {
-                        console.log('error: ', err);
-                        return;
-                    };
-                    console.log('here: 4');
-                    client2.signTxProposal(publishTxp, function(err, sign2Txp) {
-                        if (err) {
-                            console.log('error: ', err);
-                            return;
-                        };
-                        console.log(sign2Txp);
-                    });
-                })
+                // client2.openWallet(function(err, ret) {
+                //     if (err) {
+                //         console.log('error: ', err);
+                //         return;
+                //     };
+                //     console.log('here: 4');
+                //     client2.signTxProposal(publishTxp, function(err, sign2Txp) {
+                //         if (err) {
+                //             console.log('error: ', err);
+                //             return;
+                //         };
+                //         console.log(sign2Txp);
+                //     });
+                // })
             });
         });
     });

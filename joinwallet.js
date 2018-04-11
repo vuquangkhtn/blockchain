@@ -28,23 +28,23 @@ client.joinWallet(secret, "Tomas", {}, function(err, wallet) {
   fs.writeFileSync('tomas.dat', client.export());
 
 
-  client.openWallet(function(err, ret) {
-    if (err) {
-      console.log('error: ', err);
-      return
-    };
-    console.log('\n\n** Wallet Info', ret); //TODO
+  // client.openWallet(function(err, ret) {
+  //   if (err) {
+  //     console.log('error: ', err);
+  //     return
+  //   };
+  //   console.log('\n\n** Wallet Info', ret); //TODO
 
-    console.log('\n\nCreating first address:', ret); //TODO
-    if (ret.wallet.status == 'complete') {
-      client.createAddress({}, function(err,addr){
-        if (err) {
-          console.log('error: ', err);
-          return;
-        };
+  //   console.log('\n\nCreating first address:', ret); //TODO
+  //   if (ret.wallet.status == 'complete') {
+  //     client.createAddress({}, function(err,addr){
+  //       if (err) {
+  //         console.log('error: ', err);
+  //         return;
+  //       };
 
-        console.log('\nReturn:', addr)
-      });
-    }
-  });
+  //       console.log('\nReturn:', addr)
+  //     });
+  //   }
+  // });
 });

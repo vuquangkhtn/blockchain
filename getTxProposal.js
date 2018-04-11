@@ -4,7 +4,7 @@ var fs = require('fs');
 // var BWS_INSTANCE_URL = 'http://43.239.149.130:3232/bws/api';
 var BWS_INSTANCE_URL = 'https://bws.bitpay.com/bws/api';
 
-var WALLET_FILE = './tomas.dat';
+// var WALLET_FILE = './tomas.dat';
 var WALLET_FILE_2 = './irene.dat';
 
 var client = new Client({
