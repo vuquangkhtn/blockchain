@@ -54,7 +54,7 @@ client.getBalance({}, function(err, bl) {
                 var opts = {
                     outputs: [{
                         toAddress: addr2[0].address,
-                        amount: bl.availableConfirmedAmount - levels[0].feePerKb
+                        amount: bl.availableAmount - levels[0].feePerKb
                     }],
                     changeAddress: addr[0].address,
                     feePerKb: levels[0].feePerKb
