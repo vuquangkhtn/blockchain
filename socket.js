@@ -36,7 +36,7 @@ bitcoin.events.on('connected', function() {
           return
         };
         // start listening to addresses 
-        bitcoin.events.on(addr[0].address,function(tx){
+        bitcoin.events.on('tx',function(tx){
             console.log('>> Transaction detected:', tx);
           })
       });
